@@ -1,9 +1,10 @@
 'use client'
 
+import { BackgroundCarousel } from "@/components/background-carousel"
 import { MainNav } from "@/components/main-nav"
 import { PortalCard } from "@/components/portal-card"
-import { WaveHeader } from "@/components/wave-header"
-import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar"
+import { SidebarInset } from "@/components/ui/sidebar"
+import { SidebarProvider } from "@/components/ui/sidebar"
 import { AppSidebar } from "@/components/app-sidebar"
 
 const portalLinks = [
@@ -54,12 +55,12 @@ export default function HomePage() {
     <SidebarProvider>
       <div className="flex min-h-screen flex-col">
         <MainNav />
-        <WaveHeader />
-        <div className="flex">
+        <div className="flex flex-1 w-full">
           <AppSidebar />
-          <SidebarInset>
-            <main className="flex-1 p-4 md:p-6">
-              <div className="mx-auto max-w-7xl">
+          <SidebarInset className="w-full">
+            <main className="w-full h-full relative">
+              <BackgroundCarousel />
+              <div className="mx-auto max-w-7xl relative p-4 md:p-6">
                 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                   {portalLinks.map((link) => (
                     <PortalCard key={link.href} {...link} />

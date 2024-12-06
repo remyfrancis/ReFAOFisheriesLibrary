@@ -19,7 +19,7 @@ const navigation = [
 
 export function MainNav() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b border-light-cyan bg-light-cyan backdrop-blur supports-[backdrop-filter]:bg-light-cyan/60">
       <div className="container flex h-14 items-center">
         <SidebarTrigger className="mr-2" />
         <nav className="flex items-center space-x-6">

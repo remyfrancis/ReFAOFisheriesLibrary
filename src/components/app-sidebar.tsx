@@ -1,3 +1,5 @@
+"use client"
+
 import {
   Sidebar,
   SidebarContent,
@@ -143,7 +145,7 @@ export function AppSidebar() {
   }
 
   return (
-    <Sidebar className="bg-[#0B323B]">
+    <Sidebar className="bg-gunmetal flex-shrink-0">
       <SidebarHeader className="border-b border-border p-4">
         <h2 className="font-semibold">REFOAL Library</h2>
       </SidebarHeader>
