@@ -19,22 +19,22 @@ const navigation = [
 
 export function MainNav() {
   return (
-    <div className="flex h-14 items-center gap-4 bg-[#006400] px-4 text-white">
-      <SidebarTrigger>
-        <Menu className="h-6 w-6" />
-      </SidebarTrigger>
-      <nav className="flex items-center space-x-6">
-        {navigation.map((item) => (
-          <Link
-            key={item.name}
-            href={item.href}
-            className="text-sm font-medium transition-colors hover:text-white/80"
-          >
-            {item.name}
-          </Link>
-        ))}
-      </nav>
-    </div>
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container flex h-14 items-center">
+        <SidebarTrigger className="mr-2" />
+        <nav className="flex items-center space-x-6">
+          {navigation.map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              className="text-sm font-medium transition-colors hover:text-white/80"
+            >
+              {item.name}
+            </Link>
+          ))}
+        </nav>
+      </div>
+    </header>
   )
 }
 

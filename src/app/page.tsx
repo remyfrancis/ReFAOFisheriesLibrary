@@ -1,7 +1,10 @@
+'use client'
+
 import { MainNav } from "@/components/main-nav"
 import { PortalCard } from "@/components/portal-card"
 import { WaveHeader } from "@/components/wave-header"
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar"
+import { AppSidebar } from "@/components/app-sidebar"
 
 const portalLinks = [
   {
@@ -52,17 +55,20 @@ export default function HomePage() {
       <div className="flex min-h-screen flex-col">
         <MainNav />
         <WaveHeader />
-        <SidebarInset>
-          <main className="flex-1 p-4 md:p-6">
-            <div className="mx-auto max-w-7xl">
-              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                {portalLinks.map((link) => (
-                  <PortalCard key={link.href} {...link} />
-                ))}
+        <div className="flex">
+          <AppSidebar />
+          <SidebarInset>
+            <main className="flex-1 p-4 md:p-6">
+              <div className="mx-auto max-w-7xl">
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                  {portalLinks.map((link) => (
+                    <PortalCard key={link.href} {...link} />
+                  ))}
+                </div>
               </div>
-            </div>
-          </main>
-        </SidebarInset>
+            </main>
+          </SidebarInset>
+        </div>
       </div>
     </SidebarProvider>
   )
